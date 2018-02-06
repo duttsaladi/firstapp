@@ -1,0 +1,17 @@
+<div class="container" fxLayout="column" fxLayoutGap="10">
+
+  <div fxFlex="40" *ngIf="leaders">
+    <h3>Corporate Leadership</h3>
+     <md-list>
+          <md-list-item *ngFor="let leader of leaders">
+          <img md-list-avatar src="{{leader.image}}"  alt="{{leader.name}}" />
+          <h4 md-line>{{leader.name}}</h4>
+          <p md-line> {{leader.designation}} </p>
+          <p md-line>{{leader.description}}</p>
+        </md-list-item>
+      </md-list>
+    </div>
+  <div [hidden]="leaders">
+    <md-spinner></md-spinner><h4> Loading .. Please Wait</h4>
+  </div>
+ </div>
